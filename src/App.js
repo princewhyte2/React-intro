@@ -1,5 +1,4 @@
 import './App.css';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import { Component } from 'react';
 import Main from './components/MainComponent';
 
