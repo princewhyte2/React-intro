@@ -25,7 +25,7 @@ import { Link } from 'react-router-dom';
             );
     }
 
-   function RenderComments({comments , addComment, dishId}){
+   function RenderComments({comments , postComment, dishId}){
        
         if (comments != null) {
             const commented = comments.map((com) => {
@@ -33,7 +33,7 @@ import { Link } from 'react-router-dom';
                     
                     <ListGroup key={com.id} className="col-12 m-1" >
                        <ListGroupItem >{com.comment}</ListGroupItem>
-                       <ListGroupItem >--{com.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(com.date)))}</ListGroupItem>
+                       <ListGroupItem > -- {com.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(com.date)))}</ListGroupItem>
                     </ListGroup>
                     
                 ); 
@@ -42,7 +42,7 @@ import { Link } from 'react-router-dom';
                 <div  className="col-12 col-md-5 m-1">
                     <h4>Comments</h4>
                     {commented}
-                    <CommentForm dishId={dishId} addComment={addComment} />
+                    <CommentForm dishId={dishId} postComment={postComment} />
                </div>
                
                );
@@ -77,7 +77,7 @@ import { Link } from 'react-router-dom';
           }
 
           handleSubmit(values) {
-            this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+            this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
         }
         render() {
             return(
@@ -95,11 +95,12 @@ import { Link } from 'react-router-dom';
                                         <option>2</option>
                                         <option>3</option>
                                         <option>4</option>
+                                        <option>5</option>
                                     </Control.select>    
                         </div>
                         <div className="form-group">
                             <Label htmlFor="yourname" >Your Name</Label>
-                            <Control.text model=".yourname" id="yourname" name="yourname"
+                            <Control.text model=".author" id="yourname" name="yourname"
                                         placeholder="Your Name"
                                         className="form-control"
                                         validators={{
@@ -109,7 +110,7 @@ import { Link } from 'react-router-dom';
                                          <Errors
                                         className="text-danger"
                                         model=".yourname"
-                                        show="touched"
+                                        show="author"
                                         messages={{
                                             required: 'Required',
                                             minLength: 'Must be greater than 2 characters',
@@ -171,7 +172,7 @@ import { Link } from 'react-router-dom';
                     <div className="col-12 col-md-5 m-1">
                         <RenderDish dish={props.dish} />
                     </div>
-                        <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id} /> 
+                        <RenderComments comments={props.comments} postComment={props.postComment} dishId={props.dish.id} /> 
                     </div>
                 
             </div>
