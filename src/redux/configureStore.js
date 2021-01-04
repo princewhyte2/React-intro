@@ -4,7 +4,7 @@ import { Comments } from './comments';
 import { Promotions } from './promotions';
 import { Leaders } from './leaders';
 import { createForms } from 'react-redux-form';
-import { InitialFeedback } from './forms';
+import { InitialFeedback } from './form';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 

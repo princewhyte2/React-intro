@@ -11,10 +11,12 @@ import { Loading } from './LoadingComponent';
         
             return (
                 <Link to={`/menu/${dish.id}`} >
+                    <Card>
                     <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
                     <CardImgOverlay>
                     <CardTitle>{dish.name}</CardTitle>
                 </CardImgOverlay>
+                </Card>
                 </Link>
             );
     }
