@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem,
     Button, Row, Col, Label } from 'reactstrap';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import { Control, Form, Errors, actions } from 'react-redux-form';
 import { Link } from 'react-router-dom';
 
@@ -38,7 +39,11 @@ class Contact extends Component {
     render () {
 
         return(
+            <Stagger in>
+
             <div className="container">
+            <Fade in>
+
                  <div className="row">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
@@ -209,8 +214,9 @@ class Contact extends Component {
                         
                     </div>
                </div>
-
+</Fade>
             </div>
+            </Stagger>
         );
     }
 }

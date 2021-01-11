@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import { Card, CardImg, CardText, CardBody,
-    CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody,Row,Col,
+    CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody,
      Label } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { FadeTransform, Fade, Stagger } from 'react-animation-components';
@@ -102,13 +102,12 @@ import { Link } from 'react-router-dom';
                     <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                         <div className="form-group">
                             <Label htmlFor="rating" >Rating</Label>
-                                   <Control.select model=".rating" name="rating" 
-                                        className="form-control ">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                   <Control.select model=".rating" name="rating" className="form-control ">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </Control.select>    
                         </div>
                         <div className="form-group">

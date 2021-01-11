@@ -1,1 +1,1 @@
-export const baseUrl = 'https://whyte-react.netlify.app';
+export const baseUrl = 'http://localhost:3001/';
